@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PacotesViagensViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class PacotesViagensViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, UICollectionViewDelegate {
     
     var listaPacotes: [Viagem] = ViagemDAO().retornaTodasAsViagens()
     var listaPacotesBkp: [Viagem] = []
@@ -25,9 +25,6 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
         atualizaContadorLabel()
         // Do any additional setup after loading the view.
     }
-    
-
-    
      
     // MARK: - CollectionViewDatasource
 
@@ -51,6 +48,12 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width / 2
         return CGSize(width: width - 10, height: 160)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(identifier: "DetalhePacote") as! PacoteSelecionadoViewController
+        self.present(controller, animated: true, completion: nil)
     }
     
     // MARK: - Delegate TabController

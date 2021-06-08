@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		110FCF20266D32DC00316254 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110FCF1F266D32DC00316254 /* AppDelegate.swift */; };
 		110FCF22266D32DC00316254 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110FCF21266D32DC00316254 /* SceneDelegate.swift */; };
-		110FCF24266D32DC00316254 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110FCF23266D32DC00316254 /* ViewController.swift */; };
+		110FCF24266D32DC00316254 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110FCF23266D32DC00316254 /* HomeViewController.swift */; };
 		110FCF27266D32DC00316254 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 110FCF25266D32DC00316254 /* Main.storyboard */; };
 		110FCF29266D32DE00316254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 110FCF28266D32DE00316254 /* Assets.xcassets */; };
 		110FCF2C266D32DE00316254 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 110FCF2A266D32DE00316254 /* LaunchScreen.storyboard */; };
@@ -17,6 +17,7 @@
 		110FCF40266D527C00316254 /* ViagemDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110FCF3F266D527C00316254 /* ViagemDAO.swift */; };
 		110FCF43266D544400316254 /* TableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110FCF42266D544400316254 /* TableViewCellController.swift */; };
 		110FCF46266D560600316254 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 110FCF45266D560600316254 /* Assets */; };
+		111A8843266F0B16000AB8E0 /* PacoteSelecionadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111A8841266F0B16000AB8E0 /* PacoteSelecionadoViewController.swift */; };
 		115D28DA266E87DE007666E0 /* PacotesViagensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D28D9266E87DE007666E0 /* PacotesViagensViewController.swift */; };
 		115D28DD266E88BE007666E0 /* PacoteViagemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D28DC266E88BE007666E0 /* PacoteViagemCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -25,7 +26,7 @@
 		110FCF1C266D32DC00316254 /* GViagens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GViagens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		110FCF1F266D32DC00316254 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		110FCF21266D32DC00316254 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		110FCF23266D32DC00316254 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		110FCF23266D32DC00316254 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		110FCF26266D32DC00316254 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		110FCF28266D32DE00316254 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		110FCF2B266D32DE00316254 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -34,6 +35,7 @@
 		110FCF3F266D527C00316254 /* ViagemDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViagemDAO.swift; sourceTree = "<group>"; };
 		110FCF42266D544400316254 /* TableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellController.swift; sourceTree = "<group>"; };
 		110FCF45266D560600316254 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
+		111A8841266F0B16000AB8E0 /* PacoteSelecionadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacoteSelecionadoViewController.swift; sourceTree = "<group>"; };
 		115D28D9266E87DE007666E0 /* PacotesViagensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacotesViagensViewController.swift; sourceTree = "<group>"; };
 		115D28DC266E88BE007666E0 /* PacoteViagemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacoteViagemCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,12 +70,13 @@
 		110FCF1E266D32DC00316254 /* GViagens */ = {
 			isa = PBXGroup;
 			children = (
-				115D28D6266E87B2007666E0 /* Pacotes */,
 				110FCF1F266D32DC00316254 /* AppDelegate.swift */,
 				110FCF21266D32DC00316254 /* SceneDelegate.swift */,
 				110FCF37266D331B00316254 /* Model */,
-				110FCF35266D330C00316254 /* Controller */,
 				110FCF39266D332600316254 /* View */,
+				111A8848266F1398000AB8E0 /* Home */,
+				111A883E266F0AEE000AB8E0 /* Pacote Selecionado */,
+				115D28D6266E87B2007666E0 /* Pacotes */,
 				110FCF28266D32DE00316254 /* Assets.xcassets */,
 				110FCF45266D560600316254 /* Assets */,
 				110FCF2A266D32DE00316254 /* LaunchScreen.storyboard */,
@@ -85,7 +88,7 @@
 		110FCF35266D330C00316254 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				110FCF23266D32DC00316254 /* ViewController.swift */,
+				110FCF23266D32DC00316254 /* HomeViewController.swift */,
 				110FCF42266D544400316254 /* TableViewCellController.swift */,
 			);
 			path = Controller;
@@ -106,6 +109,38 @@
 				110FCF25266D32DC00316254 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		111A883E266F0AEE000AB8E0 /* Pacote Selecionado */ = {
+			isa = PBXGroup;
+			children = (
+				111A8840266F0B01000AB8E0 /* View */,
+				111A883F266F0AFA000AB8E0 /* Controller */,
+			);
+			path = "Pacote Selecionado";
+			sourceTree = "<group>";
+		};
+		111A883F266F0AFA000AB8E0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				111A8841266F0B16000AB8E0 /* PacoteSelecionadoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		111A8840266F0B01000AB8E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		111A8848266F1398000AB8E0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				110FCF35266D330C00316254 /* Controller */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		115D28D6266E87B2007666E0 /* Pacotes */ = {
@@ -209,8 +244,9 @@
 				110FCF43266D544400316254 /* TableViewCellController.swift in Sources */,
 				115D28DD266E88BE007666E0 /* PacoteViagemCollectionViewCell.swift in Sources */,
 				110FCF40266D527C00316254 /* ViagemDAO.swift in Sources */,
-				110FCF24266D32DC00316254 /* ViewController.swift in Sources */,
+				110FCF24266D32DC00316254 /* HomeViewController.swift in Sources */,
 				110FCF20266D32DC00316254 /* AppDelegate.swift in Sources */,
+				111A8843266F0B16000AB8E0 /* PacoteSelecionadoViewController.swift in Sources */,
 				110FCF22266D32DC00316254 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
