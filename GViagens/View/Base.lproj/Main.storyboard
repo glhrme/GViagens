@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W0E-KI-1Pd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kcF-fK-otU">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,7 +8,25 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="emI-GM-IG9">
+            <objects>
+                <tabBarController id="kcF-fK-otU" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qAt-lm-y0p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="7ot-FU-Wcb"/>
+                        <segue destination="W0E-KI-1Pd" kind="relationship" relationship="viewControllers" id="s12-yN-h5R"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ioY-sc-GyL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1138" y="220"/>
+        </scene>
+        <!--Procurar-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GViagens" customModuleProvider="target" sceneMemberID="viewController">
@@ -88,7 +106,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w5r-c7-x0L">
-                                <rect key="frame" x="0.0" y="227" width="320" height="341"/>
+                                <rect key="frame" x="0.0" y="227" width="320" height="292"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="175" id="HH2-wR-HE2" customClass="TableViewCellController" customModule="GViagens" customModuleProvider="target">
@@ -172,6 +190,8 @@
                             <constraint firstItem="Txz-PF-W5i" firstAttribute="top" secondItem="Qc8-hj-bCn" secondAttribute="top" constant="161" id="zDk-gG-VRU"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Procurar" id="F7i-4i-th4"/>
+                    <navigationItem key="navigationItem" id="tYt-IY-R9Z"/>
                     <connections>
                         <outlet property="tabelaViagem" destination="w5r-c7-x0L" id="Y6N-8E-l7k"/>
                         <outlet property="viewBtnHoteis" destination="Txz-PF-W5i" id="e6U-42-Q97"/>
@@ -180,9 +200,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.25" y="114.25781249999999"/>
+            <point key="canvasLocation" x="-248" y="-179"/>
         </scene>
-        <!--Pacotes Viagens View Controller-->
+        <!--Pacotes-->
         <scene sceneID="dGx-J5-cqz">
             <objects>
                 <viewController id="W0E-KI-1Pd" customClass="PacotesViagensViewController" customModule="GViagens" customModuleProvider="target" sceneMemberID="viewController">
@@ -191,7 +211,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tme-T4-O3h">
-                                <rect key="frame" x="8" y="0.0" width="304" height="568"/>
+                                <rect key="frame" x="8" y="0.0" width="304" height="519"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pacotes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9w-Pa-mQl">
                                         <rect key="frame" x="0.0" y="0.0" width="304" height="24"/>
@@ -199,22 +219,23 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dC8-Ya-p0H">
-                                        <rect key="frame" x="0.0" y="24" width="304" height="30"/>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" text="" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qb7-pW-py0">
+                                        <rect key="frame" x="0.0" y="24" width="304" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="xTw-wO-PGE"/>
+                                            <constraint firstAttribute="height" constant="40" id="aVI-CJ-UWy"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    </searchBar>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 pacotes encontrados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9E9-83-G7r">
-                                        <rect key="frame" x="0.0" y="54" width="304" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="64" width="304" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P7x-ZP-5be">
-                                        <rect key="frame" x="0.0" y="74.5" width="304" height="493.5"/>
+                                        <rect key="frame" x="0.0" y="84.5" width="304" height="434.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mpt-za-f8c">
                                             <size key="itemSize" width="135" height="160"/>
@@ -303,16 +324,21 @@
                             <constraint firstItem="tme-T4-O3h" firstAttribute="leading" secondItem="I1Q-H1-4aV" secondAttribute="leading" constant="8" id="tEb-bK-Pzf"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Pacotes" image="square.and.arrow.up" catalog="system" id="VYL-e1-AxX"/>
+                    <navigationItem key="navigationItem" id="c5O-f1-WdR"/>
                     <connections>
                         <outlet property="colecaoPacotesViagem" destination="P7x-ZP-5be" id="DqX-cd-dhs"/>
+                        <outlet property="labelContadorDePacotes" destination="9E9-83-G7r" id="eRz-tX-6IZ"/>
+                        <outlet property="pesquisarViagem" destination="Qb7-pW-py0" id="m0Y-GX-rhz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9NC-Ma-Is9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="813.75" y="113.02816901408451"/>
+            <point key="canvasLocation" x="-60" y="498"/>
         </scene>
     </scenes>
     <resources>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
