@@ -9,8 +9,8 @@ import UIKit
 
 class PacotesViagensViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, UICollectionViewDelegate {
     
-    var listaPacotes: [Viagem] = ViagemDAO().retornaTodasAsViagens()
-    var listaPacotesBkp: [Viagem] = []
+    var listaPacotes: [PacoteViagem] = PacoteViagemDAO().retornaTodasAsViagens()
+    var listaPacotesBkp: [PacoteViagem] = []
 
     @IBOutlet weak var colecaoPacotesViagem: UICollectionView!
     @IBOutlet weak var pesquisarViagem: UISearchBar!
@@ -34,14 +34,15 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaPacote", for: indexPath) as! PacoteViagemCollectionViewCell
-        let viagem = listaPacotes[indexPath.row]
-        cell.imagemViagem.image = UIImage(named: viagem.caminhoDaImagem)
-        cell.labelDias.text = "Dias \(viagem.quantidadeDeDias)"
-        cell.labelPreco.text = viagem.preco
-        cell.labelTitulo.text = viagem.titulo
+        let pacoteViagem = listaPacotes[indexPath.row]
+        cell.imagemViagem.image = UIImage(named: pacoteViagem.viagem.caminhoDaImagem)
+        cell.labelDias.text = "Dias \(pacoteViagem.viagem.quantidadeDeDias)"
+        cell.labelPreco.text = pacoteViagem.viagem.preco
+        cell.labelTitulo.text = pacoteViagem.viagem.titulo
         cell.layer.borderWidth = 0.5
         cell.layer.borderColor = UIColor(red: 85.0/255, green: 85.0/255, blue: 85.0/255, alpha: 1).cgColor
         cell.layer.cornerRadius = 8
+        print(pacoteViagem.viagem.caminhoDaImagem)
         return cell
     }
     
@@ -51,8 +52,10 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let pacoteSelecionado = listaPacotes[indexPath.row]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(identifier: "DetalhePacote") as! PacoteSelecionadoViewController
+        let controller = storyboard.instantiateViewController(identifier: "DetalhePacote") as! DetalhesViagemViewController
+        controller.pacoteSelecionado = pacoteSelecionado
         self.present(controller, animated: true, completion: nil)
     }
     
@@ -60,7 +63,7 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != "" {
-            listaPacotes = listaPacotes.filter{ $0.titulo.contains(searchText) }
+            listaPacotes = listaPacotes.filter{ $0.viagem.titulo.contains(searchText) }
         } else {
             listaPacotes = listaPacotesBkp
         }

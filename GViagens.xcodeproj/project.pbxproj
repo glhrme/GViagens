@@ -16,8 +16,11 @@
 		110FCF3D266D50E000316254 /* Viagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110FCF3C266D50E000316254 /* Viagem.swift */; };
 		110FCF40266D527C00316254 /* ViagemDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110FCF3F266D527C00316254 /* ViagemDAO.swift */; };
 		110FCF43266D544400316254 /* TableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110FCF42266D544400316254 /* TableViewCellController.swift */; };
-		110FCF46266D560600316254 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 110FCF45266D560600316254 /* Assets */; };
 		111A8843266F0B16000AB8E0 /* PacoteSelecionadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111A8841266F0B16000AB8E0 /* PacoteSelecionadoViewController.swift */; };
+		114FAF2F26705080005FA055 /* PacoteViagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114FAF2E26705080005FA055 /* PacoteViagem.swift */; };
+		114FAF322670517A005FA055 /* PacoteViagemDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114FAF312670517A005FA055 /* PacoteViagemDAO.swift */; };
+		114FAF36267052D5005FA055 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 114FAF35267052D5005FA055 /* Assets */; };
+		114FAF3926705743005FA055 /* DetalhesViagemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114FAF3826705743005FA055 /* DetalhesViagemViewController.swift */; };
 		115D28DA266E87DE007666E0 /* PacotesViagensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D28D9266E87DE007666E0 /* PacotesViagensViewController.swift */; };
 		115D28DD266E88BE007666E0 /* PacoteViagemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D28DC266E88BE007666E0 /* PacoteViagemCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -34,8 +37,11 @@
 		110FCF3C266D50E000316254 /* Viagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viagem.swift; sourceTree = "<group>"; };
 		110FCF3F266D527C00316254 /* ViagemDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViagemDAO.swift; sourceTree = "<group>"; };
 		110FCF42266D544400316254 /* TableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellController.swift; sourceTree = "<group>"; };
-		110FCF45266D560600316254 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		111A8841266F0B16000AB8E0 /* PacoteSelecionadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacoteSelecionadoViewController.swift; sourceTree = "<group>"; };
+		114FAF2E26705080005FA055 /* PacoteViagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacoteViagem.swift; sourceTree = "<group>"; };
+		114FAF312670517A005FA055 /* PacoteViagemDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacoteViagemDAO.swift; sourceTree = "<group>"; };
+		114FAF35267052D5005FA055 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Assets; path = "../../../../Downloads/arquivos-externos-2/Assets"; sourceTree = "<group>"; };
+		114FAF3826705743005FA055 /* DetalhesViagemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesViagemViewController.swift; sourceTree = "<group>"; };
 		115D28D9266E87DE007666E0 /* PacotesViagensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacotesViagensViewController.swift; sourceTree = "<group>"; };
 		115D28DC266E88BE007666E0 /* PacoteViagemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacoteViagemCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,9 +84,9 @@
 				111A883E266F0AEE000AB8E0 /* Pacote Selecionado */,
 				115D28D6266E87B2007666E0 /* Pacotes */,
 				110FCF28266D32DE00316254 /* Assets.xcassets */,
-				110FCF45266D560600316254 /* Assets */,
 				110FCF2A266D32DE00316254 /* LaunchScreen.storyboard */,
 				110FCF2D266D32DE00316254 /* Info.plist */,
+				114FAF35267052D5005FA055 /* Assets */,
 			);
 			path = GViagens;
 			sourceTree = "<group>";
@@ -99,6 +105,8 @@
 			children = (
 				110FCF3C266D50E000316254 /* Viagem.swift */,
 				110FCF3F266D527C00316254 /* ViagemDAO.swift */,
+				114FAF312670517A005FA055 /* PacoteViagemDAO.swift */,
+				114FAF2E26705080005FA055 /* PacoteViagem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,6 +139,7 @@
 		111A8840266F0B01000AB8E0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				114FAF3826705743005FA055 /* DetalhesViagemViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,7 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				110FCF2C266D32DE00316254 /* LaunchScreen.storyboard in Resources */,
-				110FCF46266D560600316254 /* Assets in Resources */,
+				114FAF36267052D5005FA055 /* Assets in Resources */,
 				110FCF29266D32DE00316254 /* Assets.xcassets in Resources */,
 				110FCF27266D32DC00316254 /* Main.storyboard in Resources */,
 			);
@@ -245,8 +254,11 @@
 				115D28DD266E88BE007666E0 /* PacoteViagemCollectionViewCell.swift in Sources */,
 				110FCF40266D527C00316254 /* ViagemDAO.swift in Sources */,
 				110FCF24266D32DC00316254 /* HomeViewController.swift in Sources */,
+				114FAF2F26705080005FA055 /* PacoteViagem.swift in Sources */,
+				114FAF3926705743005FA055 /* DetalhesViagemViewController.swift in Sources */,
 				110FCF20266D32DC00316254 /* AppDelegate.swift in Sources */,
 				111A8843266F0B16000AB8E0 /* PacoteSelecionadoViewController.swift in Sources */,
+				114FAF322670517A005FA055 /* PacoteViagemDAO.swift in Sources */,
 				110FCF22266D32DC00316254 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +409,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8SM9A2F6Y9;
 				INFOPLIST_FILE = GViagens/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -416,6 +429,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8SM9A2F6Y9;
 				INFOPLIST_FILE = GViagens/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
