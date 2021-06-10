@@ -15,11 +15,15 @@ class DetalhesViagemViewController: UIViewController {
     @IBOutlet weak var labelDiasPacoteViagem: UILabel!
     @IBOutlet weak var labelDataViagem: UILabel!
     @IBOutlet weak var labelPrecoPacoteViagem: UILabel!
-
+    
     var pacoteSelecionado: PacoteViagem? = nil
+    var positionY: CGFloat? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.positionY = self.view.frame.origin.y
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboarHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         if let pacote = pacoteSelecionado {
             self.imagemPacoteViagem.image = UIImage(named: pacote.viagem.caminhoDaImagem)
             self.labelTituloViagem.text = pacote.viagem.titulo
@@ -32,15 +36,33 @@ class DetalhesViagemViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func keyboardShow(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+                if self.view.frame.origin.y == 0 {
+                    self.view.frame.origin.y -= keyboardSize.height
+                }
+            }
     }
-    */
+    
+    @objc func keyboarHide(notification: NSNotification) {
+        if self.view.frame.origin.y != self.positionY {
+            self.view.frame.origin.y = self.positionY!
+        }
+    }
 
+    // MARK: - IBActions
+    
+    @IBAction func textFieldEmFoco(_ sender: UITextField) {
+        let datePickerView = UIDatePicker()
+        datePickerView.datePickerMode = .date
+        //sender.inputView = datePickerView
+    }
+    
+    @IBAction func botaoFinalizarCompra(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(identifier: "confirmacaoDeCompra") as! ConfirmacaoCompraViewController
+        controller.pacoteComprado = pacoteSelecionado
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
 }
